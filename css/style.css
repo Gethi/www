@@ -18,6 +18,10 @@
  */
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 @font-face {
@@ -145,19 +149,72 @@ IHM
     height: 60px; line-height: 60px;
     text-align: center;
     background-color: #C6C6C6;
+    overflow: hidden;
+    *zoom: 1;
 }
 
 .nav a{
     display: block;
     width: 33%;
     float: left;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
-    box-sizing:border-box;
-    /*debug*/
-    border: 1px solid black;
-    /*debug*/
-}
-.nav a #camera{ width: 34%; } /*central*/
+    height: 60px;
+    line-height: 60px;
+    -webkit-transition-duration: .2s;
+    -moz-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    -ms-transition-duration: .2s;
+    transition-duration: .2s;
 
+}
+
+#camera{ /*central*/
+    width: 34%; 
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+} 
+
+.active{
+    border-top: 3px solid #FF98E5;  
+}
+
+.view{
+    position: absolute;
+    top: 60px; right: 0; bottom: 60px; left: 0;
+}
+
+.current_like{
+    width: 100%;
+}
+
+.panel{
+     position: absolute;
+     top: 0; right: 0; bottom: 0; left: 0;
+     overflow-x: hidden;
+     overflow-y: scroll; 
+     -webkit-overflow-scrolling:touch;
+     transition-duration: .5s;
+}
+
+.left{ 
+    -webkit-transform:translate3d(-100%,0,0);
+    -moz-transform:translate3d(-100%,0,0);
+    -o-transform:translate3d(-100%,0,0);
+    -ms-transform:translate3d(-100%,0,0);
+    transform:translate3d(-100%,0,0);
+}
+
+.center{
+    -webkit-transform:translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    -o-transform:translate3d(0,0,0);
+    -ms-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+}
+
+.right{
+    -webkit-transform:translate3d(100%,0,0);
+    -moz-transform:translate3d(100%,0,0);
+    -o-transform:translate3d(100%,0,0);
+    -ms-transform:translate3d(100%,0,0);
+    transform:translate3d(100%,0,0);
+}

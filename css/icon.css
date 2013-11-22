@@ -40,12 +40,7 @@
 }
 
 
-.icon-camera {
-	
+.icon-camera,.icon-star, .icon-eye {
+	margin-top: 15px;
 }
-.icon-star {
-	
-}
-.icon-eye {
-	
-}
+
